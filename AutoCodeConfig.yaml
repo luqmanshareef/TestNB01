@@ -12073,27 +12073,6 @@ generators:
   customHeaders: ""
   auth: "Anonymous"
   endpointSelection: "SINGLE_PLAYBOOK"
-- type: "Insufficient_Logging"
-  owner: "FXLabs"
-  assertions:
-  - "@StatusCode != 200"
-  tags:
-  - "Compliance"
-  severity: null
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Insufficient_Logging"
-  customType: "Compliance1"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
 - type: "mongodb_injection"
   owner: "FXLabs"
   assertions:
@@ -12121,34 +12100,46 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: false
   categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: null
+- type: "Insufficient_Logging"
+  owner: "FXLabs"
+  assertions:
+  - "@StatusCode != 200"
+  tags:
+  - "Compliance"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: ""
+    value: null
+    methods: ""
+    denyRoles: ""
+    allowRoles: ""
+    pathPatterns: ""
+    resourceSamples: ""
+    queryParams: ""
+    bodyProperties: ""
+  authors: null
+  abacResources: null
+  category: "Insufficient_Logging"
+  customType: "Compliance1"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
   payloads:
-  - id: "2c9d30817c263a71017c26badf440221"
+  - id: "2c9d30817c263a71017c26badf4e0223"
     createdBy: null
-    createdDate: 1632737353539
+    createdDate: 1632737353550
     modifiedBy: null
-    modifiedDate: 1632737353539
+    modifiedDate: 1632737353550
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
-    method: "PUT"
-    endpoint: "/api/v1/primary-account/deposit-amount/{id}"
-    payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
-      \ : \"{{@RandomInteger}}\",\r\n  \"accountType\" : \"CURRENT\",\r\n  \"createdBy\"\
-      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"id\" : \"\",\r\n  \"inactive\"\
-      \ : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"\
-      version\" : \"\"\r\n}"
-    resourceName: null
-    locked: false
-  - id: "2c9d30817c263a71017c26badf530224"
-    createdBy: null
-    createdDate: 1632737353555
-    modifiedBy: null
-    modifiedDate: 1632737353555
-    version: null
-    inactive: false
-    projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/primary-account/primary-account"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12158,15 +12149,15 @@ generators:
       version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf620227"
+  - id: "2c9d30817c263a71017c26badf5d0226"
     createdBy: null
-    createdDate: 1632737353570
+    createdDate: 1632737353565
     modifiedBy: null
-    modifiedDate: 1632737353570
+    modifiedDate: 1632737353565
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/primary-account/primary-account"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12176,15 +12167,15 @@ generators:
       version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf6e022a"
+  - id: "2c9d30817c263a71017c26badf6a0229"
     createdBy: null
-    createdDate: 1632737353582
+    createdDate: 1632737353578
     modifiedBy: null
-    modifiedDate: 1632737353582
+    modifiedDate: 1632737353578
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/primary-account/withdraw-amount/{id}"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12194,59 +12185,59 @@ generators:
       version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf7c022d"
+  - id: "2c9d30817c263a71017c26badf77022c"
     createdBy: null
-    createdDate: 1632737353596
+    createdDate: 1632737353591
     modifiedBy: null
-    modifiedDate: 1632737353596
+    modifiedDate: 1632737353591
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/primary-transaction"
     payload: "{\r\n  \"amount\" : \"{{@RandomDouble | 4}}\",\r\n  \"availableBalance\"\
       \ : \"{{@RandomInteger}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\"\
-      \ : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n\
-      \  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" :\
-      \ \"\",\r\n  \"status\" : \"{{@Injection}}\",\r\n  \"type\" : \"{{@Injection}}\"\
-      ,\r\n  \"user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\
-      \",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
-      ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
+      \ : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"\
+      inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\"\
+      ,\r\n  \"status\" : \"{{@Random}}\",\r\n  \"type\" : \"{{@Random}}\",\r\n  \"\
+      user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n \
+      \   \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" : \"\"\
+      ,\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\n   \
+      \ \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf8b0230"
+  - id: "2c9d30817c263a71017c26badf87022f"
     createdBy: null
-    createdDate: 1632737353611
+    createdDate: 1632737353606
     modifiedBy: null
-    modifiedDate: 1632737353611
+    modifiedDate: 1632737353606
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/primary-transaction"
     payload: "{\r\n  \"amount\" : \"{{@RandomDouble | 4}}\",\r\n  \"availableBalance\"\
       \ : \"{{@RandomInteger}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\"\
-      \ : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n\
-      \  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" :\
-      \ \"\",\r\n  \"status\" : \"{{@Injection}}\",\r\n  \"type\" : \"{{@Injection}}\"\
-      ,\r\n  \"user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\
-      \",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
-      ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
+      \ : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"\
+      inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\"\
+      ,\r\n  \"status\" : \"{{@Random}}\",\r\n  \"type\" : \"{{@Random}}\",\r\n  \"\
+      user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n \
+      \   \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" : \"\"\
+      ,\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\n   \
+      \ \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26bade9601f4"
+  - id: "2c9d30817c263a71017c26bade6c01f3"
     createdBy: null
-    createdDate: 1632737353366
+    createdDate: 1632737353324
     modifiedBy: null
-    modifiedDate: 1632737353366
+    modifiedDate: 1632737353324
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/bank-account"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12255,19 +12246,19 @@ generators:
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"user\" : {\r\n    \"createdBy\"\
       \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n\
-      \    \"name\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"\
-      version\" : \"\"\r\n}"
+      \    \"name\" : \"{{@Random}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badea101f7"
+  - id: "2c9d30817c263a71017c26bade9e01f6"
     createdBy: null
-    createdDate: 1632737353377
+    createdDate: 1632737353374
     modifiedBy: null
-    modifiedDate: 1632737353377
+    modifiedDate: 1632737353374
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/bank-account"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12276,19 +12267,19 @@ generators:
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"user\" : {\r\n    \"createdBy\"\
       \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n\
-      \    \"name\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"\
-      version\" : \"\"\r\n}"
+      \    \"name\" : \"{{@Random}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badeaa01fa"
+  - id: "2c9d30817c263a71017c26badea601f9"
     createdBy: null
-    createdDate: 1632737353386
+    createdDate: 1632737353382
     modifiedBy: null
-    modifiedDate: 1632737353386
+    modifiedDate: 1632737353382
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/bank-account/deposit-amount"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12297,19 +12288,19 @@ generators:
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"user\" : {\r\n    \"createdBy\"\
       \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n\
-      \    \"name\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"\
-      version\" : \"\"\r\n}"
+      \    \"name\" : \"{{@Random}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badeb601fd"
+  - id: "2c9d30817c263a71017c26badeb001fc"
     createdBy: null
-    createdDate: 1632737353398
+    createdDate: 1632737353392
     modifiedBy: null
-    modifiedDate: 1632737353398
+    modifiedDate: 1632737353392
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/bank-account/withdraw-amount"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12318,383 +12309,397 @@ generators:
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"user\" : {\r\n    \"createdBy\"\
       \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n\
-      \    \"name\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"\
-      version\" : \"\"\r\n}"
+      \    \"name\" : \"{{@Random}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badec00200"
+  - id: "2c9d30817c263a71017c26badebe01ff"
     createdBy: null
-    createdDate: 1632737353408
+    createdDate: 1632737353406
     modifiedBy: null
-    modifiedDate: 1632737353408
+    modifiedDate: 1632737353406
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/branches"
-    payload: "{\r\n  \"access\" : \"{{@Injection}}\",\r\n  \"atmAtBranch\" : \"{{@Injection}}\"\
-      ,\r\n  \"branchMediatedServiceName\" : \"{{@Injection}}\",\r\n  \"branchName\"\
-      \ : \"{{@Injection}}\",\r\n  \"branchType\" : \"{{@Injection}}\",\r\n  \"createdBy\"\
-      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"customerSegment\" : \"{{@Injection}}\"\
-      ,\r\n  \"faxNumber\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\"\
+    payload: "{\r\n  \"access\" : \"{{@Random}}\",\r\n  \"atmAtBranch\" : \"{{@Random}}\"\
+      ,\r\n  \"branchMediatedServiceName\" : \"{{@Random}}\",\r\n  \"branchName\"\
+      \ : \"{{@Random}}\",\r\n  \"branchType\" : \"{{@Random}}\",\r\n  \"createdBy\"\
+      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"customerSegment\" : \"{{@Random}}\"\
+      ,\r\n  \"faxNumber\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\"\
       \ : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"\
       version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badec60203"
+  - id: "2c9d30817c263a71017c26badec40202"
     createdBy: null
-    createdDate: 1632737353414
+    createdDate: 1632737353412
     modifiedBy: null
-    modifiedDate: 1632737353414
+    modifiedDate: 1632737353412
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/branches/update"
-    payload: "{\r\n  \"access\" : \"{{@Injection}}\",\r\n  \"atmAtBranch\" : \"{{@Injection}}\"\
-      ,\r\n  \"branchMediatedServiceName\" : \"{{@Injection}}\",\r\n  \"branchName\"\
-      \ : \"{{@Injection}}\",\r\n  \"branchType\" : \"{{@Injection}}\",\r\n  \"createdBy\"\
-      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"customerSegment\" : \"{{@Injection}}\"\
-      ,\r\n  \"faxNumber\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\"\
+    payload: "{\r\n  \"access\" : \"{{@Random}}\",\r\n  \"atmAtBranch\" : \"{{@Random}}\"\
+      ,\r\n  \"branchMediatedServiceName\" : \"{{@Random}}\",\r\n  \"branchName\"\
+      \ : \"{{@Random}}\",\r\n  \"branchType\" : \"{{@Random}}\",\r\n  \"createdBy\"\
+      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"customerSegment\" : \"{{@Random}}\"\
+      ,\r\n  \"faxNumber\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\"\
       \ : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"\
       version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26baded30206"
+  - id: "2c9d30817c263a71017c26badece0205"
     createdBy: null
-    createdDate: 1632737353427
+    createdDate: 1632737353422
     modifiedBy: null
-    modifiedDate: 1632737353427
+    modifiedDate: 1632737353422
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/issues"
-    payload: "{\r\n  \"assertions\" : \"{{@Injection}}\",\r\n  \"assignedTo\" : \"\
-      {{@Injection}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n\
-      \  \"description\" : \"{{@Injection}}\",\r\n  \"endpoint\" : \"{{@Injection}}\"\
-      ,\r\n  \"env\" : \"{{@Injection}}\",\r\n  \"failedAssertions\" : \"{{@Injection}}\"\
-      ,\r\n  \"headers\" : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\"\
-      \ : false,\r\n  \"issueName\" : \"{{@Injection}}\",\r\n  \"issueStatus\" : \"\
-      OPEN\",\r\n  \"issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\
-      \n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" :\
-      \ {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\"\
-      \ : \"{{@Injection}}\",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\
-      \n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\"\
-      \ : \"{{@Injection}}\",\r\n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n\
-      \      \"createdDate\" : \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\"\
-      \ : false,\r\n      \"modifiedBy\" : \"\",\r\n      \"modifiedDate\" : \"\"\
-      ,\r\n      \"name\" : \"{{@Injection}}\",\r\n      \"version\" : \"\"\r\n  \
-      \  },\r\n    \"refId\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n \
-      \ },\r\n  \"requestBody\" : \"{{@Injection}}\",\r\n  \"responseBody\" : \"{{@Injection}}\"\
-      ,\r\n  \"responseHeaders\" : \"{{@Injection}}\",\r\n  \"result\" : \"{{@Injection}}\"\
-      ,\r\n  \"statusCode\" : \"{{@Injection}}\",\r\n  \"tags\" : [ \"{{@Random}}\"\
-      \ ],\r\n  \"version\" : \"\"\r\n}"
+    payload: "{\r\n  \"assertions\" : \"{{@Random}}\",\r\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\"\
+      \ : \"{{@Random}}\",\r\n  \"endpoint\" : \"{{@Random}}\",\r\n  \"env\" : \"\
+      {{@Random}}\",\r\n  \"failedAssertions\" : \"{{@Random}}\",\r\n  \"headers\"\
+      \ : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n\
+      \  \"issueName\" : \"{{@Random}}\",\r\n  \"issueStatus\" : \"OPEN\",\r\n  \"\
+      issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\n  \"modifiedBy\"\
+      \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" : {\r\n    \"createdBy\"\
+      \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\" : \"{{@Random}}\"\
+      ,\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" :\
+      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\
+      \n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n      \"createdDate\" :\
+      \ \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\" : false,\r\n      \"modifiedBy\"\
+      \ : \"\",\r\n      \"modifiedDate\" : \"\",\r\n      \"name\" : \"{{@Random}}\"\
+      ,\r\n      \"version\" : \"\"\r\n    },\r\n    \"refId\" : \"{{@Random}}\",\r\
+      \n    \"version\" : \"\"\r\n  },\r\n  \"requestBody\" : \"{{@Random}}\",\r\n\
+      \  \"responseBody\" : \"{{@Random}}\",\r\n  \"responseHeaders\" : \"{{@Random}}\"\
+      ,\r\n  \"result\" : \"{{@Random}}\",\r\n  \"statusCode\" : \"{{@Random}}\",\r\
+      \n  \"tags\" : [ \"{{@Random}}\" ],\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badeff0212"
+  - id: "2c9d30817c263a71017c26badeda0208"
     createdBy: null
-    createdDate: 1632737353470
+    createdDate: 1632737353434
     modifiedBy: null
-    modifiedDate: 1632737353470
+    modifiedDate: 1632737353434
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/issues"
+    payload: "{\r\n  \"assertions\" : \"{{@Random}}\",\r\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\"\
+      \ : \"{{@Random}}\",\r\n  \"endpoint\" : \"{{@Random}}\",\r\n  \"env\" : \"\
+      {{@Random}}\",\r\n  \"failedAssertions\" : \"{{@Random}}\",\r\n  \"headers\"\
+      \ : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n\
+      \  \"issueName\" : \"{{@Random}}\",\r\n  \"issueStatus\" : \"OPEN\",\r\n  \"\
+      issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\n  \"modifiedBy\"\
+      \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" : {\r\n    \"createdBy\"\
+      \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\" : \"{{@Random}}\"\
+      ,\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" :\
+      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\
+      \n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n      \"createdDate\" :\
+      \ \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\" : false,\r\n      \"modifiedBy\"\
+      \ : \"\",\r\n      \"modifiedDate\" : \"\",\r\n      \"name\" : \"{{@Random}}\"\
+      ,\r\n      \"version\" : \"\"\r\n    },\r\n    \"refId\" : \"{{@Random}}\",\r\
+      \n    \"version\" : \"\"\r\n  },\r\n  \"requestBody\" : \"{{@Random}}\",\r\n\
+      \  \"responseBody\" : \"{{@Random}}\",\r\n  \"responseHeaders\" : \"{{@Random}}\"\
+      ,\r\n  \"result\" : \"{{@Random}}\",\r\n  \"statusCode\" : \"{{@Random}}\",\r\
+      \n  \"tags\" : [ \"{{@Random}}\" ],\r\n  \"version\" : \"\"\r\n}"
+    resourceName: null
+    locked: false
+  - id: "2c9d30817c263a71017c26badee6020b"
+    createdBy: null
+    createdDate: 1632737353446
+    modifiedBy: null
+    modifiedDate: 1632737353446
+    version: null
+    inactive: false
+    projectId: "2c9670817ba15ea7017ba162e6950000"
+    categoryGroup: "DEFAULT"
+    method: "PUT"
+    endpoint: "/api/v1/issues/ui"
+    payload: "{\r\n  \"assertions\" : \"{{@Random}}\",\r\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\"\
+      \ : \"{{@Random}}\",\r\n  \"endpoint\" : \"{{@Random}}\",\r\n  \"env\" : \"\
+      {{@Random}}\",\r\n  \"failedAssertions\" : \"{{@Random}}\",\r\n  \"headers\"\
+      \ : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n\
+      \  \"issueName\" : \"{{@Random}}\",\r\n  \"issueStatus\" : \"OPEN\",\r\n  \"\
+      issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\n  \"modifiedBy\"\
+      \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" : {\r\n    \"createdBy\"\
+      \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\" : \"{{@Random}}\"\
+      ,\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" :\
+      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\
+      \n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n      \"createdDate\" :\
+      \ \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\" : false,\r\n      \"modifiedBy\"\
+      \ : \"\",\r\n      \"modifiedDate\" : \"\",\r\n      \"name\" : \"{{@Random}}\"\
+      ,\r\n      \"version\" : \"\"\r\n    },\r\n    \"refId\" : \"{{@Random}}\",\r\
+      \n    \"version\" : \"\"\r\n  },\r\n  \"requestBody\" : \"{{@Random}}\",\r\n\
+      \  \"responseBody\" : \"{{@Random}}\",\r\n  \"responseHeaders\" : \"{{@Random}}\"\
+      ,\r\n  \"result\" : \"{{@Random}}\",\r\n  \"statusCode\" : \"{{@Random}}\",\r\
+      \n  \"tags\" : [ \"{{@Random}}\" ],\r\n  \"version\" : \"\"\r\n}"
+    resourceName: null
+    locked: false
+  - id: "2c9d30817c263a71017c26badf040214"
+    createdBy: null
+    createdDate: 1632737353476
+    modifiedBy: null
+    modifiedDate: 1632737353476
+    version: null
+    inactive: false
+    projectId: "2c9670817ba15ea7017ba162e6950000"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/orgs/{branchId}/users/add-member"
+    payload: "{\r\n  \"confirmPassword\" : \"{{@Random}}\",\r\n  \"createdBy\" : \"\
+      \",\r\n  \"createdDate\" : \"\",\r\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+      ,\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\"\
+      ,\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"orgId\"\
+      \ : \"{{@Random}}\",\r\n  \"orgRole\" : \"ENTERPRISE_ADMIN\",\r\n  \"password\"\
+      \ : \"{{@PassAlphaNumSpl}}\",\r\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\r\n  \"version\" : \"\"\r\n}"
+    resourceName: null
+    locked: false
+  - id: "2c9d30817c263a71017c26badef2020e"
+    createdBy: null
+    createdDate: 1632737353458
+    modifiedBy: null
+    modifiedDate: 1632737353458
+    version: null
+    inactive: false
+    projectId: "2c9670817ba15ea7017ba162e6950000"
+    categoryGroup: "DEFAULT"
+    method: "POST"
+    endpoint: "/api/v1/issues/ui"
+    payload: "{\r\n  \"assertions\" : \"{{@Random}}\",\r\n  \"assignedTo\" : \"{{@Random}}\"\
+      ,\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\"\
+      \ : \"{{@Random}}\",\r\n  \"endpoint\" : \"{{@Random}}\",\r\n  \"env\" : \"\
+      {{@Random}}\",\r\n  \"failedAssertions\" : \"{{@Random}}\",\r\n  \"headers\"\
+      \ : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n\
+      \  \"issueName\" : \"{{@Random}}\",\r\n  \"issueStatus\" : \"OPEN\",\r\n  \"\
+      issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\n  \"modifiedBy\"\
+      \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" : {\r\n    \"createdBy\"\
+      \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\" : \"{{@Random}}\"\
+      ,\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" :\
+      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\
+      \n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n      \"createdDate\" :\
+      \ \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\" : false,\r\n      \"modifiedBy\"\
+      \ : \"\",\r\n      \"modifiedDate\" : \"\",\r\n      \"name\" : \"{{@Random}}\"\
+      ,\r\n      \"version\" : \"\"\r\n    },\r\n    \"refId\" : \"{{@Random}}\",\r\
+      \n    \"version\" : \"\"\r\n  },\r\n  \"requestBody\" : \"{{@Random}}\",\r\n\
+      \  \"responseBody\" : \"{{@Random}}\",\r\n  \"responseHeaders\" : \"{{@Random}}\"\
+      ,\r\n  \"result\" : \"{{@Random}}\",\r\n  \"statusCode\" : \"{{@Random}}\",\r\
+      \n  \"tags\" : [ \"{{@Random}}\" ],\r\n  \"version\" : \"\"\r\n}"
+    resourceName: null
+    locked: false
+  - id: "2c9d30817c263a71017c26badefb0211"
+    createdBy: null
+    createdDate: 1632737353467
+    modifiedBy: null
+    modifiedDate: 1632737353467
+    version: null
+    inactive: false
+    projectId: "2c9670817ba15ea7017ba162e6950000"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/orgs"
     payload: "{\r\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\r\n\
       \  \"company\" : \"{{@Faker.company.name}}\",\r\n  \"createdBy\" : \"\",\r\n\
-      \  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"\
-      id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"location\" : \"{{@Injection}}\"\
-      ,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" :\
-      \ \"{{@Injection}}\",\r\n  \"orgPlan\" : \"ENTERPRISE\",\r\n  \"orgType\" :\
-      \ \"PERSONAL\",\r\n  \"version\" : \"\"\r\n}"
+      \  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\"\
+      \ : \"\",\r\n  \"inactive\" : false,\r\n  \"location\" : \"{{@Random}}\",\r\n\
+      \  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Random}}\"\
+      ,\r\n  \"orgPlan\" : \"ENTERPRISE\",\r\n  \"orgType\" : \"PERSONAL\",\r\n  \"\
+      version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badedd0209"
+  - id: "2c9d30817c263a71017c26badf3f0220"
     createdBy: null
-    createdDate: 1632737353437
+    createdDate: 1632737353535
     modifiedBy: null
-    modifiedDate: 1632737353437
+    modifiedDate: 1632737353535
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/issues"
-    payload: "{\r\n  \"assertions\" : \"{{@Injection}}\",\r\n  \"assignedTo\" : \"\
-      {{@Injection}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n\
-      \  \"description\" : \"{{@Injection}}\",\r\n  \"endpoint\" : \"{{@Injection}}\"\
-      ,\r\n  \"env\" : \"{{@Injection}}\",\r\n  \"failedAssertions\" : \"{{@Injection}}\"\
-      ,\r\n  \"headers\" : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\"\
-      \ : false,\r\n  \"issueName\" : \"{{@Injection}}\",\r\n  \"issueStatus\" : \"\
-      OPEN\",\r\n  \"issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\
-      \n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" :\
-      \ {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\"\
-      \ : \"{{@Injection}}\",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\
-      \n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\"\
-      \ : \"{{@Injection}}\",\r\n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n\
-      \      \"createdDate\" : \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\"\
-      \ : false,\r\n      \"modifiedBy\" : \"\",\r\n      \"modifiedDate\" : \"\"\
-      ,\r\n      \"name\" : \"{{@Injection}}\",\r\n      \"version\" : \"\"\r\n  \
-      \  },\r\n    \"refId\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n \
-      \ },\r\n  \"requestBody\" : \"{{@Injection}}\",\r\n  \"responseBody\" : \"{{@Injection}}\"\
-      ,\r\n  \"responseHeaders\" : \"{{@Injection}}\",\r\n  \"result\" : \"{{@Injection}}\"\
-      ,\r\n  \"statusCode\" : \"{{@Injection}}\",\r\n  \"tags\" : [ \"{{@Random}}\"\
-      \ ],\r\n  \"version\" : \"\"\r\n}"
-    resourceName: null
-    locked: false
-  - id: "2c9d30817c263a71017c26badeeb020c"
-    createdBy: null
-    createdDate: 1632737353451
-    modifiedBy: null
-    modifiedDate: 1632737353451
-    version: null
-    inactive: false
-    projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
-    endpoint: "/api/v1/issues/ui"
-    payload: "{\r\n  \"assertions\" : \"{{@Injection}}\",\r\n  \"assignedTo\" : \"\
-      {{@Injection}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n\
-      \  \"description\" : \"{{@Injection}}\",\r\n  \"endpoint\" : \"{{@Injection}}\"\
-      ,\r\n  \"env\" : \"{{@Injection}}\",\r\n  \"failedAssertions\" : \"{{@Injection}}\"\
-      ,\r\n  \"headers\" : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\"\
-      \ : false,\r\n  \"issueName\" : \"{{@Injection}}\",\r\n  \"issueStatus\" : \"\
-      OPEN\",\r\n  \"issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\
-      \n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" :\
-      \ {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\"\
-      \ : \"{{@Injection}}\",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\
-      \n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\"\
-      \ : \"{{@Injection}}\",\r\n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n\
-      \      \"createdDate\" : \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\"\
-      \ : false,\r\n      \"modifiedBy\" : \"\",\r\n      \"modifiedDate\" : \"\"\
-      ,\r\n      \"name\" : \"{{@Injection}}\",\r\n      \"version\" : \"\"\r\n  \
-      \  },\r\n    \"refId\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n \
-      \ },\r\n  \"requestBody\" : \"{{@Injection}}\",\r\n  \"responseBody\" : \"{{@Injection}}\"\
-      ,\r\n  \"responseHeaders\" : \"{{@Injection}}\",\r\n  \"result\" : \"{{@Injection}}\"\
-      ,\r\n  \"statusCode\" : \"{{@Injection}}\",\r\n  \"tags\" : [ \"{{@Random}}\"\
-      \ ],\r\n  \"version\" : \"\"\r\n}"
+    endpoint: "/api/v1/primary-account/deposit-amount/{id}"
+    payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
+      \ : \"{{@RandomInteger}}\",\r\n  \"accountType\" : \"CURRENT\",\r\n  \"createdBy\"\
+      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"id\" : \"\",\r\n  \"inactive\"\
+      \ : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"\
+      version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badef5020f"
+  - id: "2c9d30817c263a71017c26badf100217"
     createdBy: null
-    createdDate: 1632737353461
+    createdDate: 1632737353488
     modifiedBy: null
-    modifiedDate: 1632737353461
+    modifiedDate: 1632737353488
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/issues/ui"
-    payload: "{\r\n  \"assertions\" : \"{{@Injection}}\",\r\n  \"assignedTo\" : \"\
-      {{@Injection}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n\
-      \  \"description\" : \"{{@Injection}}\",\r\n  \"endpoint\" : \"{{@Injection}}\"\
-      ,\r\n  \"env\" : \"{{@Injection}}\",\r\n  \"failedAssertions\" : \"{{@Injection}}\"\
-      ,\r\n  \"headers\" : [ \"{{@Random}}\" ],\r\n  \"id\" : \"\",\r\n  \"inactive\"\
-      \ : false,\r\n  \"issueName\" : \"{{@Injection}}\",\r\n  \"issueStatus\" : \"\
-      OPEN\",\r\n  \"issueType\" : \"AUTOMATIC\",\r\n  \"method\" : \"OPTIONS\",\r\
-      \n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"project\" :\
-      \ {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"description\"\
-      \ : \"{{@Injection}}\",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\
-      \n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\"\
-      \ : \"{{@Injection}}\",\r\n    \"org\" : {\r\n      \"createdBy\" : \"\",\r\n\
-      \      \"createdDate\" : \"\",\r\n      \"id\" : \"\",\r\n      \"inactive\"\
-      \ : false,\r\n      \"modifiedBy\" : \"\",\r\n      \"modifiedDate\" : \"\"\
-      ,\r\n      \"name\" : \"{{@Injection}}\",\r\n      \"version\" : \"\"\r\n  \
-      \  },\r\n    \"refId\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n \
-      \ },\r\n  \"requestBody\" : \"{{@Injection}}\",\r\n  \"responseBody\" : \"{{@Injection}}\"\
-      ,\r\n  \"responseHeaders\" : \"{{@Injection}}\",\r\n  \"result\" : \"{{@Injection}}\"\
-      ,\r\n  \"statusCode\" : \"{{@Injection}}\",\r\n  \"tags\" : [ \"{{@Random}}\"\
-      \ ],\r\n  \"version\" : \"\"\r\n}"
-    resourceName: null
-    locked: false
-  - id: "2c9d30817c263a71017c26badf080215"
-    createdBy: null
-    createdDate: 1632737353480
-    modifiedBy: null
-    modifiedDate: 1632737353480
-    version: null
-    inactive: false
-    projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
-    method: "POST"
-    endpoint: "/api/v1/orgs/{branchId}/users/add-member"
-    payload: "{\r\n  \"confirmPassword\" : \"{{@Injection}}\",\r\n  \"createdBy\"\
-      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
-      ,\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\"\
-      ,\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"\
-      orgId\" : \"{{@Injection}}\",\r\n  \"orgRole\" : \"ENTERPRISE_ADMIN\",\r\n \
-      \ \"password\" : \"{{@PassAlphaNumSpl}}\",\r\n  \"username\" : \"{{@Faker.name.username}}\"\
-      ,\r\n  \"version\" : \"\"\r\n}"
-    resourceName: null
-    locked: false
-  - id: "2c9d30817c263a71017c26badf130218"
-    createdBy: null
-    createdDate: 1632737353491
-    modifiedBy: null
-    modifiedDate: 1632737353491
-    version: null
-    inactive: false
-    projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/orgs/{branchId}/users/{userId}"
     payload: "{\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"id\"\
       \ : \"\",\r\n  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\"\
       \ : \"\",\r\n  \"org\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\"\
       \ : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
+      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\"\
       ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"orgRole\" : \"PROJECT_MANAGER\",\r\
       \n  \"status\" : \"ACTIVE\",\r\n  \"users\" : {\r\n    \"company\" : \"{{@Faker.company.name}}\"\
       ,\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"email\"\
       \ : \"{{@Faker.internet.emailAddress}}\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"jobTitle\" : \"{{@Faker.job.title}}\",\r\n    \"location\"\
-      \ : \"{{@Injection}}\",\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\"\
-      \ : \"\",\r\n    \"name\" : \"{{@Injection}}\",\r\n    \"username\" : \"{{@Faker.name.username}}\"\
+      \ : \"{{@Random}}\",\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" :\
+      \ \"\",\r\n    \"name\" : \"{{@Random}}\",\r\n    \"username\" : \"{{@Faker.name.username}}\"\
       ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf1f021b"
+  - id: "2c9d30817c263a71017c26badf1c021a"
     createdBy: null
-    createdDate: 1632737353503
+    createdDate: 1632737353500
     modifiedBy: null
-    modifiedDate: 1632737353503
+    modifiedDate: 1632737353500
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/orgs/{branchId}/users/{userId}/reset-password"
-    payload: "{\r\n  \"confirmPassword\" : \"{{@Injection}}\",\r\n  \"createdBy\"\
-      \ : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
+    payload: "{\r\n  \"confirmPassword\" : \"{{@Random}}\",\r\n  \"createdBy\" : \"\
+      \",\r\n  \"createdDate\" : \"\",\r\n  \"email\" : \"{{@Faker.internet.emailAddress}}\"\
       ,\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\"\
-      ,\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"\
-      orgId\" : \"{{@Injection}}\",\r\n  \"orgRole\" : \"ENTERPRISE_ADMIN\",\r\n \
-      \ \"password\" : \"{{@PassAlphaNumSpl}}\",\r\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"orgId\"\
+      \ : \"{{@Random}}\",\r\n  \"orgRole\" : \"ENTERPRISE_ADMIN\",\r\n  \"password\"\
+      \ : \"{{@PassAlphaNumSpl}}\",\r\n  \"username\" : \"{{@Faker.name.username}}\"\
       ,\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf36021e"
+  - id: "2c9d30817c263a71017c26badf31021d"
     createdBy: null
-    createdDate: 1632737353525
+    createdDate: 1632737353521
     modifiedBy: null
-    modifiedDate: 1632737353525
+    modifiedDate: 1632737353521
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/orgs/{id}"
     payload: "{\r\n  \"billingEmail\" : \"{{@Faker.internet.emailAddress}}\",\r\n\
       \  \"company\" : \"{{@Faker.company.name}}\",\r\n  \"createdBy\" : \"\",\r\n\
-      \  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"\
-      id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"location\" : \"{{@Injection}}\"\
-      ,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" :\
-      \ \"{{@Injection}}\",\r\n  \"orgPlan\" : \"ENTERPRISE\",\r\n  \"orgType\" :\
-      \ \"PERSONAL\",\r\n  \"version\" : \"\"\r\n}"
+      \  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\"\
+      \ : \"\",\r\n  \"inactive\" : false,\r\n  \"location\" : \"{{@Random}}\",\r\n\
+      \  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Random}}\"\
+      ,\r\n  \"orgPlan\" : \"ENTERPRISE\",\r\n  \"orgType\" : \"PERSONAL\",\r\n  \"\
+      version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badf9b0233"
+  - id: "2c9d30817c263a71017c26badf960232"
     createdBy: null
-    createdDate: 1632737353627
+    createdDate: 1632737353622
     modifiedBy: null
-    modifiedDate: 1632737353627
+    modifiedDate: 1632737353622
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/products"
     payload: "{\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\"\
-      \ : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n \
-      \ \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\"\
+      \ : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"\
+      modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Random}}\"\
       ,\r\n  \"org\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\"\
       ,\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" :\
-      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
-      ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"refId\" : \"{{@Injection}}\",\r\n\
-      \  \"version\" : \"\"\r\n}"
+      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\
+      \n    \"version\" : \"\"\r\n  },\r\n  \"refId\" : \"{{@Random}}\",\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badfb50236"
+  - id: "2c9d30817c263a71017c26badfb20235"
     createdBy: null
-    createdDate: 1632737353653
+    createdDate: 1632737353650
     modifiedBy: null
-    modifiedDate: 1632737353653
+    modifiedDate: 1632737353650
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/products"
     payload: "{\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\"\
-      \ : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n \
-      \ \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\"\
+      \ : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"\
+      modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Random}}\"\
       ,\r\n  \"org\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\"\
       ,\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" :\
-      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
-      ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"refId\" : \"{{@Injection}}\",\r\n\
-      \  \"version\" : \"\"\r\n}"
+      \ \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\
+      \n    \"version\" : \"\"\r\n  },\r\n  \"refId\" : \"{{@Random}}\",\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badfc10239"
+  - id: "2c9d30817c263a71017c26badfbc0238"
     createdBy: null
-    createdDate: 1632737353665
+    createdDate: 1632737353660
     modifiedBy: null
-    modifiedDate: 1632737353665
+    modifiedDate: 1632737353660
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/recepient"
-    payload: "{\r\n  \"accountNumber\" : \"{{@Injection}}\",\r\n  \"createdBy\" :\
-      \ \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Injection}}\"\
-      ,\r\n  \"email\" : \"{{@Faker.internet.emailAddress}}\",\r\n  \"id\" : \"\"\
-      ,\r\n  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\"\
-      \ : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
+    payload: "{\r\n  \"accountNumber\" : \"{{@Random}}\",\r\n  \"createdBy\" : \"\"\
+      ,\r\n  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n \
+      \ \"email\" : \"{{@Faker.internet.emailAddress}}\",\r\n  \"id\" : \"\",\r\n\
+      \  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" :\
+      \ \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
       ,\r\n  \"user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\
       \",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
+      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\"\
       ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badfca023c"
+  - id: "2c9d30817c263a71017c26badfc8023b"
     createdBy: null
-    createdDate: 1632737353674
+    createdDate: 1632737353672
     modifiedBy: null
-    modifiedDate: 1632737353674
+    modifiedDate: 1632737353672
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/recepient"
-    payload: "{\r\n  \"accountNumber\" : \"{{@Injection}}\",\r\n  \"createdBy\" :\
-      \ \"\",\r\n  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Injection}}\"\
-      ,\r\n  \"email\" : \"{{@Faker.internet.emailAddress}}\",\r\n  \"id\" : \"\"\
-      ,\r\n  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\"\
-      \ : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
+    payload: "{\r\n  \"accountNumber\" : \"{{@Random}}\",\r\n  \"createdBy\" : \"\"\
+      ,\r\n  \"createdDate\" : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n \
+      \ \"email\" : \"{{@Faker.internet.emailAddress}}\",\r\n  \"id\" : \"\",\r\n\
+      \  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" :\
+      \ \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"phone\" : \"{{@Faker.phoneNumber.phoneNumber}}\"\
       ,\r\n  \"user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\
       \",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
+      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\"\
       ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badfd5023f"
+  - id: "2c9d30817c263a71017c26badfd1023e"
     createdBy: null
-    createdDate: 1632737353685
+    createdDate: 1632737353681
     modifiedBy: null
-    modifiedDate: 1632737353685
+    modifiedDate: 1632737353681
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/savings-account/savings-account"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12703,19 +12708,19 @@ generators:
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"user\" : {\r\n    \"createdBy\"\
       \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n\
-      \    \"name\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"\
-      version\" : \"\"\r\n}"
+      \    \"name\" : \"{{@Random}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badfe20242"
+  - id: "2c9d30817c263a71017c26badfdd0241"
     createdBy: null
-    createdDate: 1632737353697
+    createdDate: 1632737353693
     modifiedBy: null
-    modifiedDate: 1632737353697
+    modifiedDate: 1632737353693
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/savings-account/savings-account"
     payload: "{\r\n  \"accountBalance\" : \"{{@RandomInteger}}\",\r\n  \"accountNumber\"\
@@ -12724,99 +12729,99 @@ generators:
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"user\" : {\r\n    \"createdBy\"\
       \ : \"\",\r\n    \"createdDate\" : \"\",\r\n    \"id\" : \"\",\r\n    \"inactive\"\
       \ : false,\r\n    \"modifiedBy\" : \"\",\r\n    \"modifiedDate\" : \"\",\r\n\
-      \    \"name\" : \"{{@Injection}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"\
-      version\" : \"\"\r\n}"
+      \    \"name\" : \"{{@Random}}\",\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\"\
+      \ : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badfed0245"
+  - id: "2c9d30817c263a71017c26badfe90244"
     createdBy: null
-    createdDate: 1632737353709
+    createdDate: 1632737353705
     modifiedBy: null
-    modifiedDate: 1632737353709
+    modifiedDate: 1632737353705
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/savings-transaction"
     payload: "{\r\n  \"amount\" : \"{{@RandomDouble | 4}}\",\r\n  \"availableBalance\"\
       \ : \"{{@RandomInteger}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\"\
-      \ : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n\
-      \  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" :\
-      \ \"\",\r\n  \"status\" : \"{{@Injection}}\",\r\n  \"type\" : \"{{@Injection}}\"\
-      ,\r\n  \"user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\
-      \",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
-      ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
+      \ : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"\
+      inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\"\
+      ,\r\n  \"status\" : \"{{@Random}}\",\r\n  \"type\" : \"{{@Random}}\",\r\n  \"\
+      user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n \
+      \   \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" : \"\"\
+      ,\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\n   \
+      \ \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badff30248"
+  - id: "2c9d30817c263a71017c26badff10247"
     createdBy: null
-    createdDate: 1632737353715
+    createdDate: 1632737353713
     modifiedBy: null
-    modifiedDate: 1632737353715
+    modifiedDate: 1632737353713
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/savings-transaction"
     payload: "{\r\n  \"amount\" : \"{{@RandomDouble | 4}}\",\r\n  \"availableBalance\"\
       \ : \"{{@RandomInteger}}\",\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\"\
-      \ : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n\
-      \  \"inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" :\
-      \ \"\",\r\n  \"status\" : \"{{@Injection}}\",\r\n  \"type\" : \"{{@Injection}}\"\
-      ,\r\n  \"user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\
-      \",\r\n    \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\"\
-      \ : \"\",\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Injection}}\"\
-      ,\r\n    \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
+      \ : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"\
+      inactive\" : false,\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\" : \"\"\
+      ,\r\n  \"status\" : \"{{@Random}}\",\r\n  \"type\" : \"{{@Random}}\",\r\n  \"\
+      user\" : {\r\n    \"createdBy\" : \"\",\r\n    \"createdDate\" : \"\",\r\n \
+      \   \"id\" : \"\",\r\n    \"inactive\" : false,\r\n    \"modifiedBy\" : \"\"\
+      ,\r\n    \"modifiedDate\" : \"\",\r\n    \"name\" : \"{{@Random}}\",\r\n   \
+      \ \"version\" : \"\"\r\n  },\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26badffc024b"
+  - id: "2c9d30817c263a71017c26badff9024a"
     createdBy: null
-    createdDate: 1632737353724
+    createdDate: 1632737353721
     modifiedBy: null
-    modifiedDate: 1632737353724
+    modifiedDate: 1632737353721
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "PUT"
     endpoint: "/api/v1/transfers"
     payload: "{\r\n  \"confirmed\" : false,\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\"\
-      \ : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n\
-      \  \"inactive\" : false,\r\n  \"location\" : \"{{@Injection}}\",\r\n  \"modifiedBy\"\
+      \ : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"\
+      inactive\" : false,\r\n  \"location\" : \"{{@Random}}\",\r\n  \"modifiedBy\"\
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"transactionType\" : \"WITHDRAW\"\
       ,\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26bae002024e"
+  - id: "2c9d30817c263a71017c26bae000024d"
     createdBy: null
-    createdDate: 1632737353730
+    createdDate: 1632737353728
     modifiedBy: null
-    modifiedDate: 1632737353730
+    modifiedDate: 1632737353728
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/transfers"
     payload: "{\r\n  \"confirmed\" : false,\r\n  \"createdBy\" : \"\",\r\n  \"createdDate\"\
-      \ : \"\",\r\n  \"description\" : \"{{@Injection}}\",\r\n  \"id\" : \"\",\r\n\
-      \  \"inactive\" : false,\r\n  \"location\" : \"{{@Injection}}\",\r\n  \"modifiedBy\"\
+      \ : \"\",\r\n  \"description\" : \"{{@Random}}\",\r\n  \"id\" : \"\",\r\n  \"\
+      inactive\" : false,\r\n  \"location\" : \"{{@Random}}\",\r\n  \"modifiedBy\"\
       \ : \"\",\r\n  \"modifiedDate\" : \"\",\r\n  \"transactionType\" : \"WITHDRAW\"\
       ,\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26bae0090251"
+  - id: "2c9d30817c263a71017c26bae0060250"
     createdBy: null
-    createdDate: 1632737353737
+    createdDate: 1632737353734
     modifiedBy: null
-    modifiedDate: 1632737353737
+    modifiedDate: 1632737353734
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/users/enterprise-sign-up"
     payload: "{\r\n  \"accountNonExpired\" : false,\r\n  \"accountNonLocked\" : false,\r\
@@ -12824,21 +12829,21 @@ generators:
       \  \"createdDate\" : \"\",\r\n  \"credentialsNonExpired\" : false,\r\n  \"email\"\
       \ : \"{{@Faker.internet.emailAddress}}\",\r\n  \"enabled\" : false,\r\n  \"\
       id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"jobTitle\" : \"{{@Faker.job.title}}\"\
-      ,\r\n  \"location\" : \"{{@Injection}}\",\r\n  \"modifiedBy\" : \"\",\r\n  \"\
-      modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"password\"\
-      \ : \"{{@PassAlphaNumSpl}}\",\r\n  \"privileges\" : [ \"{{@Random}}\" ],\r\n\
-      \  \"username\" : \"{{@Faker.name.username}}\",\r\n  \"version\" : \"\"\r\n}"
+      ,\r\n  \"location\" : \"{{@Random}}\",\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\"\
+      \ : \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\r\n  \"privileges\" : [ \"{{@Random}}\" ],\r\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26bae0100254"
+  - id: "2c9d30817c263a71017c26bae00e0253"
     createdBy: null
-    createdDate: 1632737353744
+    createdDate: 1632737353742
     modifiedBy: null
-    modifiedDate: 1632737353744
+    modifiedDate: 1632737353742
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/users/personal-sign-up"
     payload: "{\r\n  \"accountNonExpired\" : false,\r\n  \"accountNonLocked\" : false,\r\
@@ -12846,21 +12851,21 @@ generators:
       \  \"createdDate\" : \"\",\r\n  \"credentialsNonExpired\" : false,\r\n  \"email\"\
       \ : \"{{@Faker.internet.emailAddress}}\",\r\n  \"enabled\" : false,\r\n  \"\
       id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"jobTitle\" : \"{{@Faker.job.title}}\"\
-      ,\r\n  \"location\" : \"{{@Injection}}\",\r\n  \"modifiedBy\" : \"\",\r\n  \"\
-      modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"password\"\
-      \ : \"{{@PassAlphaNumSpl}}\",\r\n  \"privileges\" : [ \"{{@Random}}\" ],\r\n\
-      \  \"username\" : \"{{@Faker.name.username}}\",\r\n  \"version\" : \"\"\r\n}"
+      ,\r\n  \"location\" : \"{{@Random}}\",\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\"\
+      \ : \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\r\n  \"privileges\" : [ \"{{@Random}}\" ],\r\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
-  - id: "2c9d30817c263a71017c26bae0170257"
+  - id: "2c9d30817c263a71017c26bae0140256"
     createdBy: null
-    createdDate: 1632737353751
+    createdDate: 1632737353748
     modifiedBy: null
-    modifiedDate: 1632737353751
+    modifiedDate: 1632737353748
     version: null
     inactive: false
     projectId: "2c9670817ba15ea7017ba162e6950000"
-    categoryGroup: "INJECTION"
+    categoryGroup: "DEFAULT"
     method: "POST"
     endpoint: "/api/v1/users/team-sign-up"
     payload: "{\r\n  \"accountNonExpired\" : false,\r\n  \"accountNonLocked\" : false,\r\
@@ -12868,13 +12873,13 @@ generators:
       \  \"createdDate\" : \"\",\r\n  \"credentialsNonExpired\" : false,\r\n  \"email\"\
       \ : \"{{@Faker.internet.emailAddress}}\",\r\n  \"enabled\" : false,\r\n  \"\
       id\" : \"\",\r\n  \"inactive\" : false,\r\n  \"jobTitle\" : \"{{@Faker.job.title}}\"\
-      ,\r\n  \"location\" : \"{{@Injection}}\",\r\n  \"modifiedBy\" : \"\",\r\n  \"\
-      modifiedDate\" : \"\",\r\n  \"name\" : \"{{@Injection}}\",\r\n  \"password\"\
-      \ : \"{{@PassAlphaNumSpl}}\",\r\n  \"privileges\" : [ \"{{@Random}}\" ],\r\n\
-      \  \"username\" : \"{{@Faker.name.username}}\",\r\n  \"version\" : \"\"\r\n}"
+      ,\r\n  \"location\" : \"{{@Random}}\",\r\n  \"modifiedBy\" : \"\",\r\n  \"modifiedDate\"\
+      \ : \"\",\r\n  \"name\" : \"{{@Random}}\",\r\n  \"password\" : \"{{@PassAlphaNumSpl}}\"\
+      ,\r\n  \"privileges\" : [ \"{{@Random}}\" ],\r\n  \"username\" : \"{{@Faker.name.username}}\"\
+      ,\r\n  \"version\" : \"\"\r\n}"
     resourceName: null
     locked: false
   customHeaders: null
   auth: "Default"
-  endpointSelection: null
+  endpointSelection: "ALL"
 globalSkipPaths: null
