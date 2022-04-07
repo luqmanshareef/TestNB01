@@ -1,0 +1,1335 @@
+openapi: 3.0.2
+info:
+  title: Panel Conveyancing Transaction Request Service
+  version: 1.0.0
+  description: "Panel Conveyancing Transaction Request Service"
+tags:
+  - name: Panel Conveyancing Transaction Request
+
+paths:
+  /:
+   post:
+      tags:
+        - Panel Conveyancing Transaction Request
+      description: Panel Conveyancing Transaction Request
+      operationId: panel-conveyancing-transaction-request-create
+      x-internal-entitlement: internal:optimus:panel-conveyancing-transaction-request:create
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PanelConveyancingTransactionRequest'
+            examples:
+              Accept transaction:
+                value:
+                  id: "d6cf8626-3448-48b8-90f5-1ddc7e93ba06"
+                  parentId: "5c828ca2-3448-48b8-90f5-1ddc7e93ba06"
+                  parentType: Transaction
+                  branchId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                  clientReferences:
+                  - type: "optimusCaseId"
+                    ref: "48607"
+                  - type: "optimusQuoteId"
+                    ref: "22347"
+                  status: Instructed
+                  instruction:
+                    buyToLet: true
+                    giftedDepositCount: 0
+                    helpToBuyLoan: true
+                    limitedCompanyBuyToLet: true
+                    houseOfMultipleOccupancy: true
+                    auction: true
+                    repossession: true
+                    rightToBuy: true
+                    sharedEquity: true
+                    concessionary: true
+                    transferOfEquity: true
+                    redeemMortgageCount: 0
+                    helpToBuyRepayment: true
+                    helpToBuyForces: true
+                    lenderMortgage: true
+                    legalJurisdiction: "EnglandWales"
+                    propertyInstructionType: "Purchase"
+                    valuation:
+                    - valueType: "Purchase"
+                      value: 
+                        amount: "137000.00"
+                        currency: "GBP"
+                    product:
+                      productId: "3c0cb0d2-c160-45df-821b-d8e75cd301a3" 
+                      fees:
+                      - feeId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                        feeType: "Cost"
+                        listPrice: "300.00"
+                        netPrice: "300.00"
+                        currency: "GBP"
+                        orderItemFeeId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                        billingAccountId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    property:
+                      tenure: "Leasehold"
+                      sharedOwnership: true
+                      unregistered: true
+                      newBuild: true                      
+                    firstTimeBuyer: true
+                    secondProperty: true
+                  transactionSubject: 
+                    addressType: "addressFixedLine"
+                    name: "Apartment 2001, Millennium Tower"
+                    street: "250 The Quays"
+                    town: "Salford"
+                    country: "England"
+                    postcode: "M50 3SB"
+                  person:
+                  - roles: ["Buyer"]
+                    id: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    title: "Dr"
+                    firstName: "Tessa"
+                    lastName: "Test"
+                    email: "example@example.com"
+                    telephoneNumber: "01234567890"
+                  organisation:
+                  - roles: ["Creator", "Introducer" ]
+                    id: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    name: "Money Supermarket"
+                    email: "msm@aventria.co.uk"
+                    telephoneNumber: "0987654321"
+                  - roles: ["Conveyancer"]
+                    id: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    name: "PLS"
+                    email: "manchester@pls-solicitors.co.uk"
+                    telephoneNumber: "0333 014 6150"
+                    address: 
+                      addressType: "addressFixedLine"
+                      number: "Atlantic Street"
+                      street: "2 Aegean Road"
+                      town: "Altrincham"
+                      country: "England"
+                      postcode: "WA14 5UK"
+                  createdBy: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                  createdDate: '2021-11-18T03:52:27.419Z'
+                  updatedBy: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                  updatedDate: '2021-11-18T03:52:27.419Z'
+                  completionDate : '2021-12-12T03:52:27.419Z'
+
+      responses:
+        '200': 
+          description: successful operation
+          content:
+            application/json:
+             schema:
+              $ref: "#/components/schemas/PanelConveyancingTransactionResponse"
+        '400':
+          $ref: "#/components/responses/400BadRequest"
+        '401':
+          $ref: "#/components/responses/401Unauthorized"
+        '403':
+          $ref: "#/components/responses/403Forbidden"
+        '404':
+          $ref: "#/components/responses/404NotFound"
+        '500':
+          $ref: "#/components/responses/500InternalServerError"
+
+   put:
+      tags:
+        - Panel Conveyancing Transaction Request
+      description: Panel Conveyancing Transaction Request
+      operationId: panel-conveyancing-transaction-request-create-put
+      x-internal-entitlement: internal:optimus:panel-conveyancing-transaction-request:create
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PanelConveyancingTransactionRequest'
+            examples:
+              Accept transaction:
+                value:
+                  id: "d6cf8626-3448-48b8-90f5-1ddc7e93ba06"
+                  parentId: "5c828ca2-3448-48b8-90f5-1ddc7e93ba06"
+                  parentType: Transaction
+                  branchId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                  clientReferences:
+                  - type: "optimusCaseId"
+                    ref: "48607"
+                  - type: "optimusQuoteId"
+                    ref: "22347"
+                  status: Instructed
+                  instruction:
+                    buyToLet: true
+                    giftedDepositCount: 0
+                    helpToBuyLoan: true
+                    limitedCompanyBuyToLet: true
+                    houseOfMultipleOccupancy: true
+                    auction: true
+                    repossession: true
+                    rightToBuy: true
+                    sharedEquity: true
+                    concessionary: true
+                    transferOfEquity: true
+                    redeemMortgageCount: 0
+                    helpToBuyRepayment: true
+                    helpToBuyForces: true
+                    lenderMortgage: true
+                    legalJurisdiction: "EnglandWales"
+                    propertyInstructionType: "Purchase"
+                    valuation:
+                    - valueType: "Purchase"
+                      value: 
+                        amount: "137000.00"
+                        currency: "GBP"
+                    product:
+                      productId: "3c0cb0d2-c160-45df-821b-d8e75cd301a3" 
+                      fees:
+                      - feeId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                        feeType: "Cost"
+                        listPrice: "300.00"
+                        netPrice: "300.00"
+                        currency: "GBP"
+                        orderItemFeeId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                        billingAccountId: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    property:
+                      tenure: "Leasehold"
+                      sharedOwnership: true
+                      unregistered: true
+                      newBuild: true                      
+                    firstTimeBuyer: true
+                    secondProperty: true
+                  transactionSubject: 
+                    addressType: "addressFixedLine"
+                    name: "Apartment 2001, Millennium Tower"
+                    street: "250 The Quays"
+                    town: "Salford"
+                    country: "England"
+                    postcode: "M50 3SB"
+                  person:
+                  - roles: ["Buyer"]
+                    id: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    title: "Dr"
+                    firstName: "Tessa"
+                    lastName: "Test"
+                    email: "example@example.com"
+                    telephoneNumber: "01234567890"
+                  organisation:
+                  - roles: ["Creator", "Introducer" ]
+                    id: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    name: "Money Supermarket"
+                    email: "msm@aventria.co.uk"
+                    telephoneNumber: "0987654321"
+                  - roles: ["Conveyancer"]
+                    id: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                    name: "PLS"
+                    email: "manchester@pls-solicitors.co.uk"
+                    telephoneNumber: "0333 014 6150"
+                    address: 
+                      addressType: "addressFixedLine"
+                      number: "Atlantic Street"
+                      street: "2 Aegean Road"
+                      town: "Altrincham"
+                      country: "England"
+                      postcode: "WA14 5UK"
+                  createdBy: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                  createdDate: '2021-11-18T03:52:27.419Z'
+                  updatedBy: "5c828ca2-b6dc-4bdf-8463-9ee2cf204f80"
+                  updatedDate: '2021-11-18T03:52:27.419Z'
+                  completionDate : '2021-12-12T03:52:27.419Z'
+      responses:
+        '200': 
+          description: successful operation
+          content:
+            application/json:
+             schema:
+              $ref: "#/components/schemas/PanelConveyancingTransactionResponse"
+        '400':
+          $ref: "#/components/responses/400BadRequest"
+        '401':
+          $ref: "#/components/responses/401Unauthorized"
+        '403':
+          $ref: "#/components/responses/403Forbidden"
+        '404':
+          $ref: "#/components/responses/404NotFound"
+        '500':
+          $ref: "#/components/responses/500InternalServerError"
+components:
+  headers:
+    lgsTraceResponse:
+      description: Trace context providing an unique identifier for an individual requests
+      schema:
+        type: string
+        minLength: 39
+        maxLength: 39
+        pattern: "^[0-9a-fA-F]{2}-[0-9a-fA-F]{32}--[0-9a-fA-F]{2}$"
+      examples:
+        Example traceresponse:
+          value: "00-199c8ce55dc743a88661498aa8eb2cfc--00"
+
+  responses:
+    400BadRequest:
+      description: "Bad Request"
+      headers:
+        traceresponse:
+          $ref: "#/components/headers/lgsTraceResponse"
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/lgsErrorResponse"
+          examples:
+            Invalid content type supplied:
+              value:
+                status: "400"
+                code: "40000"
+                title: "Invalid content type supplied"
+            Validation error:
+              value:
+                status: "400"
+                code: "40001"
+                title: "Validation error"
+            Invalid traceparent http header:
+              value:
+                status: "400"
+                code: "40002"
+                title: "Invalid trace header"
+            No matching data found:
+              value:
+                status: "400"
+                code: "40003"
+                title: "No matching data found"
+            Invalid header:
+              value:
+                status: "400"
+                code: "40004"
+                title: "Invalid header"
+            Third party error:
+              value:
+                status: "400"
+                code: "40005"
+                title: "Third party error"
+    401Unauthorized:
+      description: Unauthorized
+      headers:
+        traceresponse:
+          $ref: "#/components/headers/lgsTraceResponse"
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/lgsErrorResponse"
+          examples:
+            Invalid identity:
+              value:
+                status: "401"
+                code: "40100"
+                title: "Invalid identity"
+    403Forbidden:
+      description: "Forbidden"
+      headers:
+        traceresponse:
+          $ref: "#/components/headers/lgsTraceResponse"
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/lgsErrorResponse"
+          examples:
+            Invalid Entitlement:
+              value:
+                status: "403"
+                code: "40300"
+                title: "Invalid Entitlement"
+            No Entitlement:
+              value:
+                status: "403"
+                code: "40301"
+                title: "No Entitlement"
+            No permission to entity:
+              value:
+                status: "403"
+                code: "40302"
+                title: "No permission to entity"
+            User not registered:
+              value:
+                status: "403"
+                code: "40303"
+                title: "User not registered"
+            Usage limit reached:
+              value:
+                status: "403"
+                code: "40304"
+                title: "Usage limit reached"
+            Email account not verified:
+              value:
+                status: "403"
+                code: "40305"
+                title: "Email account not verified"
+            Token expiry too long:
+              value:
+                status: "403"
+                code: "40306"
+                title: "Token expiry too long"
+    404NotFound:
+      description: "Not Found"
+      headers:
+        traceresponse:
+          $ref: "#/components/headers/lgsTraceResponse"
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/lgsErrorResponse"
+          examples:
+            Entity not found:
+              value:
+                status: "404"
+                code: "40401"
+                title: "Entity not found"
+    500InternalServerError:
+      description: "Internal Server Error"
+      headers:
+        traceresponse:
+          $ref: "#/components/headers/lgsTraceResponse"
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/lgsErrorResponse"
+          examples:
+            Resource not found:
+              value:
+                status: "500"
+                code: "50000"
+                title: "Internal server error"
+                messages:
+                  - message: "Sorry, something has gone wrong whilst processing your request. An error has been logged and our support team will investigate this shortly. Please try again later and if the issue persists, please contact your Account Manager referencing the value 00-199c8ce55dc743a88661498aa8eb2cfc--00."
+      
+  schemas:
+    PanelConveyancingTransactionRequest:
+      type: object
+      additionalProperties: false
+      required:      
+      - branchId
+      - createdDate
+      properties:
+        id:
+          description: The unique id of the transaction request.
+          "$ref": "#/components/schemas/uuid"
+        parentId:
+          description: The unique id of the transaction.
+          "$ref": "#/components/schemas/uuid"
+        parentType:
+          type: string
+          description: The parent type of the transaction request.
+          enum:
+          - Transaction  
+          - TransactionRequest
+        branchId:
+          description: The id of the account that the caller responsible for creating the transaction request belongs to. 
+          "$ref": "#/components/schemas/uuid"
+        clientReferences:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - type
+            - ref
+            properties:
+              type:
+                type: string   
+                maxLength: 100
+              ref:
+                type: string
+                minLength: 3
+                maxLength: 100
+        status:
+          description: A field to describe the status.
+          type: string
+          enum:
+          - Instructed
+          - OnHold
+          - InProgress
+          - Cancelled
+          - Completed
+          - AwaitingVerification
+        instruction:
+          type: object
+          additionalProperties: true
+          properties:
+            buyToLet:
+              type: boolean               
+            giftedDepositCount:
+              type: integer
+              minimum: 0
+            helpToBuyLoan:
+              type: boolean
+            limitedCompanyBuyToLet:
+              type: boolean
+            houseOfMultipleOccupancy:
+              type: boolean
+            auction:
+              type: boolean
+            repossession:
+              type: boolean
+            rightToBuy:
+              type: boolean
+            sharedEquity:
+              type: boolean
+            concessionary:
+              type: boolean
+            transferOfEquity:
+              type: boolean              
+            redeemMortgageCount:
+              type: integer  
+              minimum: 0
+            helpToBuyRepayment:
+              type: boolean
+            helpToBuyForces:
+              type: boolean
+            lenderMortgage:
+              type: boolean
+            legalJurisdiction:
+              "$ref": "#/components/schemas/lgsLegalJurisdiction"
+            propertyInstructionType:
+              "$ref": "#/components/schemas/lgsPropertyInstructionType"
+            valuation:
+              type: array
+              minItems: 1
+              items:
+                "$ref": "#/components/schemas/lgsPropertyValue"
+            product:
+              type: object
+              additionalProperties: true
+              properties:
+                productId:
+                  "$ref": "#/components/schemas/uuid"
+                fees:
+                  type: array
+                  minItems: 1
+                  items:
+                    "$ref": "#/components/schemas/lgsOrderItemFee"
+            property:
+              type: object
+              additionalProperties: true
+              properties:
+                tenure:
+                  "$ref": "#/components/schemas/lgsPropertyTenure"
+                sharedOwnership:
+                  type: boolean
+                unregistered:
+                  type: boolean
+                newBuild:
+                  type: boolean
+            firstTimeBuyer:
+              type: boolean
+            secondProperty:
+              type: boolean
+        transactionSubject:
+          description: The subject of the transaction request.
+          "$ref": "#/components/schemas/lgsAddressFixedLine"           
+        person:
+          type: array
+          minItems: 1
+          items:
+            "$ref": "#/components/schemas/lgsPersonWithRoles"
+        organisation:
+          type: array
+          minItems: 1
+          items:
+            "$ref": "#/components/schemas/lgsOrganisationWithRoles"
+        createdBy:
+          description: This is the id of the caller that is responsible for creating
+            the transaction request. The caller is administered as a contact in Salesforce.
+          "$ref": "#/components/schemas/uuid"
+        createdDate:
+          type: string
+          format: date-time
+        updatedBy:
+          description: This is the id of the caller that is responsible for the most
+            recent update to the transaction request. The caller is administered as
+            a contact in Salesforce.
+          "$ref": "#/components/schemas/uuid"
+        updatedDate:
+          type: string
+          format: date-time
+        completionDate:
+          type: string
+          format: date-time
+    PanelConveyancingTransactionResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - transactionRequestId
+      - transactionId
+      properties:
+        transactionRequestId:
+          description: The unique id of the transaction request.
+          "$ref": "#/components/schemas/uuid"
+        transactionId:
+          description: The unique id of the transaction.
+          "$ref": "#/components/schemas/uuid" 
+    uuid:
+      type: string
+      additionalProperties: false
+      format: "uuid"
+      minLength: 36
+      maxLength: 36
+      pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+    lgsPropertyValue:
+      type: object
+      required:
+        - valueType
+        - value
+      additionalProperties: true
+      properties:
+        valueType:
+          type: string
+          description: >-
+            The type of property value this data represents e.g. Sale, Listing,
+            Purchase etc.
+        value:
+          $ref: "#/components/schemas/lgsMonetaryValue"
+        date:
+          type: string
+          format: date
+          description: Date ISO8601 format, YYYY-MM-DD
+
+    lgsOrderItemFee:
+      allOf:
+        - $ref: "#/components/schemas/lgsFee"
+        - additionalProperties: true
+          type: object
+          properties:
+            orderItemFeeId:
+              $ref: "#/components/schemas/lgsUuid"
+              description: The Unique Id for an instance of this fee on an order.
+              $comment: This orderItemFeeId is used in the context of a placed order
+            billingAccountId:
+              $ref: "#/components/schemas/lgsUuid"
+              description: The Account Id to be billed
+              $comment: >-
+                If not set then no account billed in Un1ty. If not set then
+                default accountId is billed in Group. 
+    lgsErrorResponse:
+      type: "object"
+      additionalProperties: false
+      required:
+        - "status"
+        - "code"
+        - "title"
+      properties:
+        status:
+          type: "string"
+          minLength: 3
+          maxLength: 3
+          pattern: "^[0-9]{3}$"
+        code:
+          type: "string"
+          minLength: 5
+          maxLength: 5
+          pattern: "^[0-9]{5}$"
+        title:
+          type: "string"
+          minLength: 1
+          maxLength: 100
+        messages:
+          type: "array"
+          maxItems: 100
+          items:
+            type: "object"
+            additionalProperties: false
+            required:
+              - "message"
+            properties:
+              property:
+                type: "string"
+                minLength: 1
+                maxLength: 1000
+              message:
+                type: "string"
+                minLength: 1
+                maxLength: 1000
+    lgsMonetaryValue:
+      type: object
+      required:
+        - amount
+        - currency
+      additionalProperties: false
+      properties:
+        amount:
+          $ref: "#/components/schemas/lgsAmount"
+        currency:
+          $ref: "#/components/schemas/lgsCurrency"
+    lgsAmount:
+      type: string
+      pattern: "^\\d{1,13}$|^\\d{1,13}\\.\\d{1,5}$"
+    lgsCurrency:
+      type: string
+      pattern: ^(GBP|EUR)$
+    lgsPropertyTenure:
+      type: string
+      maxLength: 60
+      $comment: Should contain values such as Freehold, Leasehold, Outright Ownership
+    lgsFee:
+      type: object
+      required:
+        - feeId
+        - feeType
+        - netPrice
+        - currency
+      additionalProperties: true
+      properties:
+        feeId:
+          $ref: "#/components/schemas/lgsUuid"
+          description: Type Id of the fee to be billed.
+          $comment: >-
+            This feeId needs to exist in Salesforce, this relates to the fee
+            type
+        feeType:
+          type: string
+          $comment: >-
+            A Sale is what we are charging the client. A Cost represents a third
+            party cost for a service, product, or application they are
+            providing, e.g. this could be a Local authority search fee, or an
+            introducer fee
+          pattern: ^(Sale|Cost)$
+        listPrice:
+          $ref: "#/components/schemas/lgsAmount"
+          description: >-
+            The list price is the recommended retail price of a single unit of
+            product exclusive of VAT
+        netPrice:
+          $ref: "#/components/schemas/lgsAmount"
+          description: >-
+            The net price per unit of product after discounts, promotions etc
+            have been applied, and exclusive of VAT
+        currency:
+          $ref: "#/components/schemas/lgsCurrency"
+          description: >-
+            The currency that applies to all of the monetary amounts within this
+            object
+    lgsUuid:
+      type: string
+      format: uuid
+      minLength: 36
+      maxLength: 36
+      pattern: >-
+        ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$
+    lgsLegalJurisdiction:
+      type: string
+      enum:
+        - EnglandWales
+        - Scotland
+        - NorthernIreland
+    lgsPropertyInstructionType:
+      type: string
+      description: e.g. Purchase, Sell, Remortgage
+    lgsOrganisationWithRoles:
+      allOf:
+        - $ref: "#/components/schemas/lgsOrganisation"
+        - type: object
+          additionalProperties: true
+          properties:
+            roles:
+              type: array
+              minItems: 1
+              items:
+                type: string
+                description: The role of the organisation in this transaction request.
+                $comment: >-
+                  Introducer: the company responsible for introducing another
+                  organisation or person into the request and likely will pay or
+                  receive fees. Creator (OrderedBy): the company creating the
+                  request, generally used when the creator and requestor are
+                  different. Requestor (OrderedFor): the company making the
+                  request, who may or may not be the creator, and likely will
+                  pay or receive fees. Recipient: the company who should receive
+                  the result or output of the request e.g. a report.
+                  Conveyancer: generally a solicitor firm acting as a
+                  conveyancer. Lender: company, such as a bank, lending money
+                  e.g. via a mortgage. Buyer: company buying a property. Vendor:
+                  company selling a property.
+                pattern: >-
+                  ^(Introducer|Creator|Requestor|Recipient|Conveyancer|Lender|Buyer|Vendor)$
+    lgsPersonWithRoles:
+      allOf:
+        - $ref: "#/components/schemas/lgsPerson"
+        - type: object
+          additionalProperties: true
+          properties:
+            roles:
+              type: array
+              minItems: 1
+              items:
+                type: string
+                description: >-
+                  The role of the person in this transaction request. Primary
+                  role used to identify the main applicant, vendor, buyer etc.
+                $comment: >-
+                  PrimaryContact: used to identify the main applicant, vendor,
+                  buyer etc. to be contacted e.g. for correspondence. Applicant:
+                  the person making the application. Occupier: the current
+                  occupier of the property. Vendor: person selling a property.
+                  Buyer: person buying a property. Creator (OrderedBy): the
+                  person creating the request, generally used when the creator
+                  and requestor are different. Requestor (OrderedFor): the
+                  person making the request, who may or may not be the creator
+                  and likely will pay or receive fees. Recipient: the person who
+                  should receive the result or output of the request e.g. a
+                  report.
+                pattern: >-
+                  ^(PrimaryContact|Applicant|Occupier|Vendor|Buyer|Creator|Requestor|Recipient)$
+    lgsUprn:
+      type: integer
+      format: int64
+      minimum: 0
+      maximum: 9223372036854775000
+    lgsPerson:
+      type: object
+      additionalProperties: true
+      properties:
+        id:
+          $comment: Unique person id
+          $ref: "#/components/schemas/lgsUuid"
+        title:
+          type: string
+          maxLength: 20
+        firstName:
+          type: string
+          maxLength: 100
+        middleName:
+          type: string
+          maxLength: 100
+        lastName:
+          type: string
+          maxLength: 100
+        email:
+          $comment: >-
+            Email format based on
+            https://datatracker.ietf.org/doc/html/rfc3696#section-3
+          type: string
+          format: email
+          maxLength: 320
+        telephoneNumber:
+          $comment: Limits set inline with https://en.wikipedia.org/wiki/E.164
+          type: string
+          minLength: 8
+          maxLength: 15
+        address:
+          description: Main residential address
+          $ref: "#/components/schemas/lgsAddress"
+        correspondenceAddress:
+          description: Alternative address for correspondence
+          $ref: "#/components/schemas/lgsAddress"
+      required:
+        - lastName
+    lgsOrganisation:
+      type: object
+      additionalProperties: true
+      properties:
+        id:
+          $comment: Unique organisation id
+          $ref: "#/components/schemas/lgsUuid"
+        name:
+          description: the name of the firm, company, or organisation
+          type: string
+          minLength: 1
+          maxLength: 160
+        email:
+          $comment: >-
+            Email format based on
+            https://datatracker.ietf.org/doc/html/rfc3696#section-3
+          type: string
+          format: email
+          maxLength: 320
+        telephoneNumber:
+          $comment: Limits set inline with https://en.wikipedia.org/wiki/E.164
+          type: string
+          minLength: 8
+          maxLength: 15
+        address:
+          description: >-
+            An address for the organisation, this may be the registered address
+            or premises
+          $ref: "#/components/schemas/lgsAddress"
+      required:
+        - name
+    lgsAddress:
+      oneOf:
+        - $ref: '#/components/schemas/lgsAddressPAF'
+        - $ref: '#/components/schemas/lgsAddressBS7666'
+        - $ref: '#/components/schemas/lgsAddressSingleLine'
+        - $ref: '#/components/schemas/lgsAddress9Line'
+        - $ref: '#/components/schemas/lgsAddressFixedLine'
+        - $ref: '#/components/schemas/lgsAddressUprnOnly'
+        - $ref: '#/components/schemas/lgsAddressAddressBaseCore'
+    lgsAddressPAF:
+      $comment: >-
+        Based
+        https://www.poweredbypaf.com/wp-content/uploads/2017/07/Latest-Programmers_guide_Edition-7-Version-6.pdf.
+        Addresses defined in PAF are designed to be applicable properties that
+        recieve mail.
+      type: object
+      required:
+        - addressType
+      properties:
+        addressType:
+          type: string
+          enum:
+            - addressPAF
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+        udprn:
+          type: integer
+          description: Royal Mail’s Unique Delivery Point Reference Number (UDPRN)
+          minimum: 0
+          maximum: 99999999
+        departmentName:
+          type: string
+          description: 'example: Customer Service Department'
+          maxLength: 60
+          pattern: ^.*$
+        organisationName:
+          type: string
+          description: 'example: JW Simpsons Ltd'
+          maxLength: 60
+          pattern: ^.*$
+        subBuildingName:
+          type: string
+          description: 'example: The Old Mill'
+          maxLength: 30
+          pattern: ^.*$
+        buildingName:
+          type: string
+          description: 'example: The Annexe'
+          maxLength: 50
+          pattern: ^.*$
+        buildingNumber:
+          type: string
+          description: 'example: 7'
+          maxLength: 4
+          pattern: ^.*$
+        poBoxNumber:
+          type: string
+          description: 'example: 5422'
+          maxLength: 14
+          pattern: ^.*$
+        dependentThoroughfare:
+          type: string
+          description: 'example: Richmond Terrace'
+          maxLength: 60
+          pattern: ^.*$
+        thoroughfare:
+          type: string
+          description: 'example: Main Street'
+          maxLength: 60
+          pattern: ^.*$
+        doubleDependentLocality:
+          type: string
+          description: 'example: Hook'
+          maxLength: 35
+          pattern: ^.*$
+        dependentLocality:
+          type: string
+          description: 'example: Warsash'
+          maxLength: 35
+          pattern: ^.*$
+        postTown:
+          type: string
+          description: 'example: Southampton'
+          maxLength: 30
+          pattern: ^.*$
+        postcode:
+          type: string
+          description: 'example: SO99 9ZZ'
+          maxLength: 10
+          pattern: ^.*$
+        blpuEasting:
+          type: number
+          description: 'example: 296701'
+        blpuNorthing:
+          type: number
+          description: 'example: 92288'
+    lgsAddressSingleLine:
+      $comment: >-
+        Singleline is suitable for those applications where a structured address
+        is not required.
+      type: object
+      required:
+        - addressType
+        - addressLine
+      properties:
+        addressType:
+          type: string
+          enum:
+            - addressSingleLine
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+        addressLine:
+          type: string
+          description: >-
+            example: The Old Mill, 7A-9 Main Street, Hook, Warsash, Southampton,
+            SO99 9ZZ
+          maxLength: 1000
+          pattern: ^.*$
+    lgsAddress9Line:
+      $comment: >-
+        9Line is suitable for those applications where a structured address is
+        required but flexibility around the address elements is desired.
+      type: object
+      required:
+        - addressType
+        - addressLine1
+        - addressLine2
+      properties:
+        addressType:
+          type: string
+          enum:
+            - address9Line
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+        addressLine1:
+          type: string
+          description: 'example: The Old Mill'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine2:
+          type: string
+          description: 'example: 7-9 Main Street'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine3:
+          type: string
+          description: 'example: Hook'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine4:
+          type: string
+          description: 'example: Warsash'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine5:
+          type: string
+          description: 'example: Southampton'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine6:
+          type: string
+          description: 'example: Hampshire'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine7:
+          type: string
+          description: 'example: England'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine8:
+          type: string
+          description: 'example: United Kingdom'
+          maxLength: 200
+          pattern: ^.*$
+        addressLine9:
+          type: string
+          description: 'example: SO99 9ZZ'
+          maxLength: 200
+          pattern: ^.*$
+    lgsAddressFixedLine:
+      $comment: >-
+        FixedLine is suitable for those applications where a user friendly,
+        structured address is required.
+      type: object
+      required:
+        - addressType
+        - postcode
+      properties:
+        addressType:
+          type: string
+          enum:
+            - addressFixedLine
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+        name:
+          type: string
+          maxLength: 200
+          pattern: ^.*$
+        number:
+          type: string
+          maxLength: 200
+          pattern: ^.*$
+        street:
+          type: string
+          description: 'example: 7-9 Main Street'
+          maxLength: 200
+          pattern: ^.*$
+        area:
+          type: string
+          description: 'example: Hook'
+          maxLength: 200
+          pattern: ^.*$
+        town:
+          type: string
+          description: 'example: Warsash'
+          maxLength: 200
+          pattern: ^.*$
+        county:
+          type: string
+          description: 'example: Hampshire'
+          maxLength: 200
+          pattern: ^.*$
+        country:
+          type: string
+          description: 'example: England'
+          maxLength: 200
+          pattern: ^.*$
+        postcode:
+          type: string
+          description: 'example: SO99 9ZZ'
+          maxLength: 10
+          pattern: ^.*$
+    lgsAddressBS7666:
+      $comment: >-
+        BS7666 no longer includes field lengths, however, field lengths included
+        to conform to Landmark Standard 2.5.1. Addresses defined in BS 7666 are
+        designed to be applicable to land and property, not just properties that
+        recieve mail.
+      type: object
+      required:
+        - addressType
+        - postcodeLocator
+      properties:
+        addressType:
+          type: string
+          enum:
+            - addressBS7666
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+        organisation:
+          type: string
+          description: 'example: JW Simpson Ltd'
+          maxLength: 60
+          pattern: ^.*$
+        saoText:
+          type: string
+          description: 'example: The Annexe'
+          maxLength: 90
+          pattern: ^.*$
+        saoStartNumber:
+          type: integer
+          description: 'example: 1'
+        saoStartSuffix:
+          type: string
+          description: 'example: A'
+          maxLength: 2
+          pattern: ^.*$
+        saoEndNumber:
+          type: integer
+          description: 'example: 5'
+        saoEndSuffix:
+          type: string
+          description: 'example: C'
+          maxLength: 2
+          pattern: ^.*$
+        paoText:
+          type: string
+          description: 'example: The Old Mill'
+          maxLength: 90
+          pattern: ^.*$
+        paoStartNumber:
+          type: integer
+          description: 'example: 7'
+        paoStartSuffix:
+          type: string
+          description: 'example: A'
+          maxLength: 2
+          pattern: ^.*$
+        paoEndNumber:
+          type: integer
+          description: 'example: 9'
+        paoEndSuffix:
+          type: string
+          description: 'example: C'
+          maxLength: 2
+          pattern: ^.*$
+        streetDescription:
+          type: string
+          description: 'example: Main Street'
+          maxLength: 100
+          pattern: ^.*$
+        locality:
+          type: string
+          description: 'example: Hook'
+          maxLength: 35
+          pattern: ^.*$
+        townName:
+          type: string
+          description: 'example: Warsash'
+          maxLength: 30
+          pattern: ^.*$
+        administrativeArea:
+          type: string
+          description: 'example: Southampton'
+          maxLength: 30
+          pattern: ^.*$
+        postcodeLocator:
+          type: string
+          description: 'example: SO99 9ZZ'
+          maxLength: 10
+          pattern: ^.*$
+        blpuEasting:
+          type: number
+          description: 'example: 296701'
+        blpuNorthing:
+          type: number
+          description: 'example: 92288'
+    lgsAddressUprnOnly:
+      $comment: >-
+        UprnOnly is suitable when client or application has a valid uprn. If an
+        address is required an address match will need to be made.
+      type: object
+      required:
+        - addressType
+        - uprn
+      properties:
+        addressType:
+          type: string
+          enum:
+            - addressUprnOnly
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+    lgsAddressAddressBaseCore:
+      $comment: >-
+        Based
+        https://www.ordnancesurvey.co.uk/documents/product-support/tech-spec/addressbasecore-technical-specification.pdf.
+      type: object
+      required:
+        - addressType
+      properties:
+        addressType:
+          type: string
+          enum:
+            - addressAddressBaseCore
+        uprn:
+          $ref: "#/components/schemas/lgsUprn"
+        parentUprn:
+          $ref: "#/components/schemas/lgsUprn"
+        udprn:
+          type: integer
+          description: Royal Mail’s Unique Delivery Point Reference Number (UDPRN)
+          minimum: 0
+          maximum: 99999999
+        usrn:
+          type: integer
+          description: >-
+            Unique Street Reference Number assigned by the Street Name and
+            Numbering Custodian OR Ordnance Survey depending on the address
+            record
+          minimum: 0
+          maximum: 99999999
+        toid:
+          type: string
+          description: The Topographic Identifier taken from OS MasterMap Topography Layer
+          maxLength: 20
+          pattern: ^.*$
+        easting:
+          type: number
+          description: >-
+            A value in metres defining the x location in accordance with the
+            British National Grid
+        northing:
+          type: number
+          description: >-
+            A value in metres defining the y location in accordance with the
+            British National Grid
+        latitude:
+          type: number
+          description: >-
+            A value defining the Latitude location in accordance with the ETRS89
+            coordinate reference system
+        longitude:
+          type: number
+          description: >-
+            A value defining the Longitude location in accordance with the
+            ETRS89 coordinate reference system
+        singleLineAddress:
+          type: string
+          description: >-
+            A single attribute containing text concatenation of the address
+            elements separated by a comma
+          maxLength: 500
+          pattern: ^.*$
+        poBox:
+          type: string
+          description: >-
+            Text concatenation of PO BOX and the Post Office Box (PO Box) number
+            or ‘BFPO’ and the British Forces Post Office number
+          maxLength: 13
+          pattern: ^.*$
+        organisation:
+          type: string
+          description: >-
+            The organisation name is the business name given, when appropriate,
+            to an address record. 
+          maxLength: 100
+          pattern: ^.*$
+        subBuilding:
+          type: string
+          description: The sub-building name and/or number for the address record
+          maxLength: 110
+          pattern: ^.*$
+        buildingName:
+          type: string
+          description: >-
+            The building name is a description applied to a single address or a
+            group of addresses
+          maxLength: 110
+          pattern: ^.*$
+        buildingNumber:
+          type: string
+          description: >-
+            The building number is a number or range of numbers given to a
+            single address or a group of addresses
+          maxLength: 13
+          pattern: ^.*$
+        streetName:
+          type: string
+          description: Street / Road name for the address record
+          maxLength: 100
+          pattern: ^.*$
+        locality:
+          type: string
+          description: >-
+            A locality defines an area or geographical identifier within a town,
+            village or hamlet. Locality represents the lower level geographical
+            area.
+          maxLength: 35
+          pattern: ^.*$
+        townName:
+          type: string
+          description: >-
+            Geographical town name assigned by the Local Authority. Please note
+            this can be different from the Post Town value assigned by Royal
+            Mail
+          maxLength: 35
+          pattern: ^.*$
+        postTown:
+          type: string
+          description: >-
+            The town or city in which the Royal Mail sorting office is located
+            which services this address record
+          maxLength: 30
+          pattern: ^.*$
+        island:
+          type: string
+          description: >-
+            Third level of geographic area name to record island names where
+            appropriate
+          maxLength: 50
+          pattern: ^.*$
+        postcode:
+          type: string
+          description: A postcode assigned by Royal Mail for the address record
+          maxLength: 8
+          pattern: ^.*$
+  
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  
+
+security:
+  - bearerAuth: [] 
